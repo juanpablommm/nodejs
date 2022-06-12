@@ -1,0 +1,23 @@
+{
+  "name": "proyecto1",
+  "version": "1.0.0",
+  "description": "primer proyecto para el curso de node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "auditoria": "npm audit && node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/juanpablommm/proyecto1.git"
+  },
+  "author": "juan pablo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanpablommm/proyecto1/issues"
+  },
+  "homepage": "https://github.com/juanpablommm/proyecto1#readme",
+  "dependencies": {
+    "moment": "^2.29.3"
+  }
+}
