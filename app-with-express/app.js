@@ -6,7 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var informacionRouter = require('./routes/informacion');
+var informacionRouter = require('./routes/informacion');/**importamos en una variable el modulo
+donde se ha creado el servidor para proceder a utilizarlo en la app */
 
 var app = express();
 
@@ -22,7 +23,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use("/informacion", informacionRouter);
+app.use("/informacion", informacionRouter); /**mencionamos la url bajo la cual se
+va aescuchar la peticion y le agregamos la varibel en el cual se imprto el modulo
+creado para esa peticion */
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
