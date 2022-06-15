@@ -1,0 +1,17 @@
+if usuario
+  h1 nombre: #{usuario.nombre}
+  h2 apellido: #{usuario.apellido}
+  h3 edad: #{usuario.edad}
+else 
+  h2 sin datos
+<!--en este lado de la platilla podemos recuperar los datos
+que fueron respondidos a traves de una expsie de interpolacion
+paracida a la de ts, que nos propone este modelo de platillas pug,
+donde simplemente con un numeral y habriendo unas llaves podemos acerder
+a un elemto que ha sido enviado a traces del servidor, en este caso
+estamos recueprando nuestro objeto usuario y los paramtros que este posesia,
+ahora podemos ir mas adelante con lo que nos ofrece express con estas platillas de pug
+y poder aplicar condicionales para tener dinamismo en el codigo html, con simplente
+utilizar un if-else sin tener que colocar parentesis para evaluar la condicion 
+ni tampoco la interpolacion que estamos utilizando sino que como vamos a evaluar un obejto 
+completo, simplemente con el nombr ay estamos accediendo a el y evaluando si es no es null -->
