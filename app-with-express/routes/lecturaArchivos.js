@@ -19,7 +19,7 @@ const archivo = fs.readFile('./archivoPrueba.txtm', "utf-8", (error, datos)=>{
      */
     if (error) {
         console.log("error en la lectura del archivo...");
-        throw error;/**tambien podemos mostrar el stack del error, o el menssage, etc*/
+        throw error;/**tambien podemos mostrar el stack del error, o el menssage */
     } else {
         /**si no hubo ningun error enctonces procedmos a aplicar nusra logica */
         console.log(datos);
