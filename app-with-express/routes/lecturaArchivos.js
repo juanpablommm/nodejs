@@ -4,18 +4,28 @@
 
 var fs = require('fs');
 
-const archivo = fs.readFileSync('./archivoPrueba.txt', "utf-8");
-/*el metodo readFileSync nos permitira leer un archivo pero no es muy recomnable 
-con archivos que sean pesados ya qeu esta es la maenra mas sencilla de realizar
-y esto arruinaria el funcionamineto de la pp, puesto que se demoraria mucho en leerlo.
-para leer con este metodo nos pedira dos cosas muy simples que serian; como primer 
-parametro la ruta del archivo y como segundo parametro la codificacio que tieneste archivo
-para poder leerlo de una manera correcta, ya sea codificacion utf-8 o demas..
+/*const archivo = fs.readFileSync('./prueba.mp4', "utf-8");*/
 
-esta forma de leerr archivos es de manera sincronica, por lo que nos ahra esperar a qeu ternime 
-la lectura antes de seguir jecutando el resto de los demas bloques de codigo que sigen desoues
-de la lectura del archivo, siendo un mala idea para rchivos demasiados pesados ya que esto 
-ahria que la aplicacion se detuviera y ahsta que el archivo no se terminara de leer no se 
-acabaria de ejecutar el demas codigo*/
+const archivo = fs.readFile('./archivoPrueba.txt', "utf-8", function(erro, datos){
+    /*esta funcion como tercer parametro es la que va ha relizar el proceso de collback, es 
+    lo que se va a ejecutar despues de que leamos el archivo,
+    basicamente lo que vamos hacer es que despues de que leamos el archivo vamos a obtner informacion
+    sobre el.
+    esta funcion recibe como parametros dos tados, el peimero seria el errror, en caso de que
+    tengamos un erro al intentar leer el archivo, que puede ir de la ruta o en caso de que los datos
+    esren corrompidos
+    y el sgundo parametro son los datos*/
 
-console.log(archivo);
+
+    console.log("esta es lo que contien el texto ", datos);
+
+});
+/*la forma correcta de leer un archivo dentro de node js, es mediante el concepto de
+un collback, mdeiante un proceso que no va a tener el proceso que no va atener la ejecucion
+del codigo node*/
+
+
+/**al ser una lectura asincronica primero se ejecuta este bloque de codigo mientras la 
+ * lectura del archivo se ejcuta
+ */
+console.log("esto es loq eu seguiria despues de leer el archivo " + archivo);
